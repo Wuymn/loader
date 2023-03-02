@@ -1,1 +1,25 @@
+-- Lib
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "W Hub | Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+-- Tabs
+local Tab = Window:MakeTab({
+	Name = "Key System",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+-- Values
+CurrentKey = WHubOnBeta
+-- Functions
+function LoadScript()
+ 
+-- Script
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "Enter Key",
+	TextDisappear = true,
+	Callback = function(Key)
+		if Key == WHubOnBeta then
+
+	end	  
+})
 
