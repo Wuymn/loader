@@ -11,7 +11,15 @@ local Tab = Window:MakeTab({
 CurrentKey = WHubOnBeta
 -- Functions
 function LoadScript()
- 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Wuymn/loader/main/W%20HUB/Script"))()
+OrionLib:MakeNotification({
+	Name = "Notification 🖕",
+	Content = "Script just on Beta | make by Wuynn#2175",
+	Image = "rbxassetid://4483345998",
+	Time = 7
+})
+end
+
 -- Script
 Tab:AddTextbox({
 	Name = "Key",
@@ -19,7 +27,7 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Key)
 		if Key == WHubOnBeta then
-
+  LoadScript
 	end	  
 })
 
