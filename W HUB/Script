@@ -1,1 +1,24 @@
-Print ("nigga")
+-- Lib
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "W Hub | Game Choose", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+-- Tabs
+local Tab = Window:MakeTab({
+	Name = "Game",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+-- Values
+
+-- Functions
+
+-- Script
+Tab:AddButton({
+	Name = "Dragon Blox",
+	Callback = function()
+      		
+  	end    
+})
+
+
+OrionLib:Init()
