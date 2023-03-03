@@ -8,7 +8,8 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 -- Values
-CurrentKey = WHubOnBeta
+_G.CurrentKey = "WHubOnBeta"
+_G.KeyInput = "Something"
 -- Functions
 function LoadScript()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/Wuymn/loader/main/W%20HUB/Script"))()
@@ -18,6 +19,13 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://4483345998",
 	Time = 7
 })
+function UnLoadScript()
+OrionLib:MakeNotification({
+	Name = "Incorrect Key 🤓😓",
+	Content = "wanna key ? Ask me on discord Wuynn#2175",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 end
 
 -- Script
@@ -25,9 +33,18 @@ Tab:AddTextbox({
 	Name = "Key",
 	Default = "Enter Key",
 	TextDisappear = true,
-	Callback = function(Key)
-		if Key == WHubOnBeta then
-  LoadScript
+	Callback = function(Value)
+  _G.KeyInput = Value	
 	end	  
 })
 
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+         if _G.KeyInput == _G.CurrentKey then
+  LoadScript()
+          end
+  	end    
+})
+
+OrionLib:Init()
