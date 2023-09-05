@@ -9,6 +9,15 @@ local Window = OrionLib:MakeWindow({
       IntroIcon = "rbxassetid://14691123379",
       Icon = "rbxassetid://14691123379"
 })
+-- Func
+function notif1()
+ OrionLib:MakeNotification({
+	Name = "Credit",
+	Content = "script by wuynn",
+	Image = "rbxassetid://14691310957",
+	Time = 5
+})
+end
 
 --[[
 Name = <string> - The name of the UI.
@@ -29,10 +38,22 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local CreditTab = Window:MakeTab({
+	Name = "Credit",
+	Icon = "rbxassetid://14691123379",
+	PremiumOnly = false
+})
+
+-- Main
 
 
-
-
+-- Credit
+CreditTab:AddButton({
+	Name = "Click to know bitch",
+	Callback = function()
+      		notifi1()
+  	end    
+})
 
 
 
