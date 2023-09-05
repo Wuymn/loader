@@ -51,7 +51,7 @@ local CreditTab = Window:MakeTab({
 CreditTab:AddButton({
 	Name = "Click to know bitch",
 	Callback = function()
-      		notifi1()
+      		notif1()
   	end    
 })
 
