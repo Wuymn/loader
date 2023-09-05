@@ -6,7 +6,7 @@ local Window = OrionLib:MakeWindow({
       SaveConfig = true, 
       ConfigFolder = "OrionTest", 
       IntroText = "W Hub",
-      IntroIcon = "https://imageupload.io/JaxLkeWFo8g2KKs"
+      IntroIcon = "https://imageupload.io/JaxLkeWFo8g2KKs",
       Icon = "rbxassetid://14691123409"
 })
 
