@@ -5,8 +5,9 @@ local Window = OrionLib:MakeWindow({
       HidePremium = false, 
       SaveConfig = true, 
       ConfigFolder = "OrionTest", 
-      IntroText = "W Hub"
-      IntroIcon = "rbxassetid://14691123409"
+      IntroText = "W Hub",
+      IntroIcon = "https://imageupload.io/JaxLkeWFo8g2KKs"
+      Icon = "rbxassetid://14691123409"
 })
 
 --[[
@@ -22,8 +23,11 @@ CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
 -- Tabs
-
-
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://14691123409",
+	PremiumOnly = false
+})
 
 
 
