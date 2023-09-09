@@ -9,7 +9,7 @@ game.StarterGui:SetCore("SendNotification",  {
  Callback = NotificationBindable;
 }
 )
-local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Wuymn/loader/main/W%20HUB/beamed%20ware%20script.txt"))()
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Wuymn/loader/main/W%20HUB/nah.txt"))()
 
 local MainUI = UILibrary.Load("BeamedWare.CC 2.0 😍")
 local FirstPage = MainUI.AddPage("Aiming")
