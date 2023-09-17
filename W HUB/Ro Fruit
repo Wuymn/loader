@@ -1,13 +1,23 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({
-  Name = "Title of the library", 
+  Name = "W Hub | Ro Fruit", 
   HidePremium = false, 
   SaveConfig = true, 
   ConfigFolder = "Ro Fruit",
   IntroText = "W Hub"})
 
 -- Idk
+
+
+
+
+
+
+
+
+
+
 
 local Weaponlist = {}
 local Weapon = nil
@@ -33,7 +43,7 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 
 -- MainTab
 
-MainTab:AddParagraph("Paragraph","Main btw Tài K3 wa mank")
+MainTab:AddParagraph("Main btw Tài K3 wa mank","")
 
 MainTab:AddDropdown({
 	Name = "Weapons",
@@ -43,8 +53,6 @@ MainTab:AddDropdown({
 		Weapon = CurrentOption
 	end    
 })
-
-Dropdown:Refresh(Weaponlist,true)
 
 MainTab:AddToggle({
 	Name = "Auto Equip",
@@ -56,9 +64,12 @@ MainTab:AddToggle({
 
 spawn(function()
 while wait() do
-if AutoEquiped then
+if WeaponEquip then
 pcall(function()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
 end)
+end
+end
+end)
 
-
+OrionLib:Init()
