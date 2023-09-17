@@ -7,17 +7,15 @@ local Window = OrionLib:MakeWindow({
   ConfigFolder = "Ro Fruit",
   IntroText = "W Hub"})
 
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
+-- Idk
+
+local Weaponlist = {}
+local Weapon = nil
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+    table.insert(Weaponlist,v.Name)
+end
+
 
 -- Tabs
 
@@ -39,16 +37,28 @@ MainTab:AddParagraph("Paragraph","Main btw Tài K3 wa mank")
 
 MainTab:AddDropdown({
 	Name = "Weapons",
-	Default = "1",
-	Options = {"1", "2"},
-	Callback = function(Value)
-		print(Value)
+	Default = "nigga",
+	Options = Weaponlist,
+	Callback = function(CurrentOption)
+		Weapon = CurrentOption
 	end    
 })
 
---[[
-Name = <string> - The name of the dropdown.
-Default = <string> - The default value of the dropdown.
-Options = <table> - The options in the dropdown.
-Callback = <function> - The function of the dropdown.
-]] 
+Dropdown:Refresh(Weaponlist,true)
+
+MainTab:AddToggle({
+	Name = "Auto Equip",
+	Default = false,
+	Callback = function(S)
+		WeaponEquip = S
+	end    
+})
+
+spawn(function()
+while wait() do
+if AutoEquiped then
+pcall(function()
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+end)
+
+
