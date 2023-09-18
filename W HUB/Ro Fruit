@@ -9,7 +9,9 @@ local Window = OrionLib:MakeWindow({
 
 -- Function
 function AutoAttack()
-
+  while wait() do
+    game:GetService("ReplicatedStorage").Document.DevilFruit_Event.OneEvent:FireServer("Combat")
+   end
 end
 
 
