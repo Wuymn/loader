@@ -7,14 +7,20 @@ local Window = OrionLib:MakeWindow({
   ConfigFolder = "Ro Fruit",
   IntroText = "W Hub"})
 
+-- Function
+function AutoAttack()
+
+end
+
+
 -- Idk
 
+local Moblist = {}
+local Mob = nil
 
-
-
-
-
-
+for i,v in pairs(game:GetService("Workspace")[_Mob]:GetChildren()) do
+    table.insert(Moblist,v.Name)
+end
 
 
 
@@ -63,13 +69,30 @@ MainTab:AddToggle({
 })
 
 spawn(function()
-while wait() do
-if WeaponEquip then
-pcall(function()
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+  while wait() do
+    if WeaponEquip then
+      pcall(function()
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+          end)
+       end
+    end
 end)
-end
-end
-end)
+
+MainTab:AddDropdown({
+	Name = "Select Mob",
+	Default = "Your Mom 🤣👈",
+	Options = Moblist,
+	Callback = function(SelectedMob)
+               Mob = SelectedMob
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Farm Mob Select",
+	Default = false,
+	Callback = function()
+		print("start")
+	end    
+})
 
 OrionLib:Init()
